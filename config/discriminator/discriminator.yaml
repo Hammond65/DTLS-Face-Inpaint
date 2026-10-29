@@ -1,0 +1,4 @@
+settings:
+  input_nc: 7
+  ndf: 64
+  n_layers: 5

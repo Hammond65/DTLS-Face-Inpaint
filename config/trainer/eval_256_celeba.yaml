@@ -1,0 +1,69 @@
+wandb_config:
+  name: Name
+  use: False
+  project: Project-Name
+  resume: null
+  id: null
+
+computer_name: Computer
+device: cuda:0
+mode: eval
+inpaint_size: &inpaint_size 32
+timestep: &timestep 20
+lr_size: 16
+interval_mode: linear
+stride: &stride 4
+inpaint_stride: &inpaint_stride 4
+
+trainer:
+  image_size: &hr_size 256
+  shuffle: True
+  train_num_steps: 5000001
+  train_lr: 2e-5
+  gradient_accumulate_every: 2
+  ema_decay: 0.995
+  fp16: False
+  step_start_ema: 2000
+  save_and_sample_every: 1000
+  results_folder: ./path/to/results/
+  load_path: ./weights/celeba-256.pt
+  sr_load_path: null
+  inpaint_load_path: null
+  data_path: /path/to/testset/
+  mask_path: null
+  train_batch_size: 32
+  input_image: /path/to/testset/
+  mask_generator_config: ./config/mask/random_thick_256.yaml
+  discriminator_config: null
+  eval_config:
+    sample_all: False
+    save_final_results: False
+
+networks:
+
+  method: fast
+  
+  unet_type:
+    sr: null
+    inpaint: null
+    refine: new
+
+  refine_unet:
+    dim: 48
+    dim_mults: [1, 2, 4, 8, 16]
+    channels: 3
+    residual: False
+
+  refine_dtls:
+    image_size: *hr_size
+    timesteps: *timestep
+    loss_config:
+      l2_loss: True
+      l2_weight: 1
+      l1_loss: True
+      l1_weight: 1
+      lpips_loss: True
+      lpips_weight: 0.1
+      sharpness_loss: True
+      sharpness_weight: 10
+      r1: null
