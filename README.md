@@ -18,7 +18,7 @@ Face image inpainting through domain transfer in latent space.
 <p align="center">
 	<img src="assets/Fig1.png" alt="Masked face inputs and inpainted results" width="850">
 </p>
-<p align="center"><em>Masked inputs (left) and inpainted results (right).</em></p>
+<p align="center"><em>Top: masked inputs. Bottom: inpainting results.</em></p>
 
 ## Overview
 
@@ -86,6 +86,6 @@ python main.py -c ./config/trainer/train_256.yaml
 | FFHQ evaluation | `config/trainer/eval_256_ffhq.yaml` |
 | Training | `config/trainer/train_256.yaml` |
 
-Copyright
+## Copyright
 
 Copyright preserve by The Hong Kong Polytechnic University and Saint Francis University. Users can use this package for further development. However, it is not for commerical use.
