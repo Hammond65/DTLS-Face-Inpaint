@@ -9,7 +9,7 @@
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
 
-[![Live Demo button](assets/demo_button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/installation_button.svg)](#installation)<br>
+[![Live Demo button](assets/demo_button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/installation_button.svg)](#-installation)<br>
 </div>
 
 <p align="center">
