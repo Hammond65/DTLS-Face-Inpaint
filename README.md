@@ -1,18 +1,15 @@
 <div align="center">
 
-# 🎨 DTLS-Face-Inpaint
-
-### A Novel Inpainting Framework with Latent Space Domain Transfer
-
-Face image inpainting through domain transfer in latent space.
-
-**Hon Man Hammond Lee · Wan-Chi Siu · Ivan Wang-Hei Ho · H. Anthony Chan**
+<p align="center">
+	<strong>🎨 DTLS-Face-Inpaint: A Novel Inpainting Framework with Latent Space Domain Transfer</strong><br>
+	<strong>Hon Man Hammond Lee, Wan-Chi Siu, Ivan Wang-Hei Ho, and H. Anthony Chan</strong><br>
+	<em>IEEE Transactions on Image Processing (TIP), 2026</em><br>
+</p>
 
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
 
-[Live Demo](https://inpaint.hamlee.top) · [Checkpoint — GitHub Release](https://github.com/Hammond65/DTLS-Face-Inpaint/releases/latest/download/celeba-256.pt) · [OneDrive backup](https://connectpolyu-my.sharepoint.com/:u:/g/personal/24144327r_connect_polyu_hk/IQD7__xQlZzPT6Cd1ECBKlleAWZ-lNAFJrRZbD9tLk189GY?e=mfpvw7)
-
+[![Live Demo button](assets/live-demo-button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/local-install-button.svg)](#installation)<br>
 </div>
 
 <p align="center">
@@ -22,18 +19,26 @@ Face image inpainting through domain transfer in latent space.
 
 ## Overview
 
-DTLS-Face-Inpaint is a face image inpainting framework that uses **Domain Transfer in Latent Space (DTLS)** to restore masked regions. This repository includes an interactive Gradio demo and configuration-driven scripts for inference and training.
+DTLS-Face-Inpaint is a face image inpainting framework that uses **Domain Transfer in Latent Space (DTLS)** to restore masked regions. Click **Live Demo** above to try it immediately with defined mask or viewer defined mask, or **Installation** to set up inference or training on your machine.
 
-## Quick Start
+<a id="installation" name="installation"></a>
+## ① Installation
 
-### 1. Create an environment
+### 1.1. Clone the repository
+
+```bash
+git clone https://github.com/Hammond65/DTLS-Face-Inpaint.git
+cd DTLS-Face-Inpaint
+```
+
+### 1.2. Create an environment
 
 ```bash
 conda create -n dtls-face-inpaint python=3.10 -y
 conda activate dtls-face-inpaint
 ```
 
-### 2. Install dependencies
+### 1.3. Install dependencies
 
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
@@ -42,11 +47,11 @@ pip install -r requirements.txt
 
 > The PyTorch command installs CUDA 12.6 wheels. For CPU or a different CUDA version, install the PyTorch build that matches your system.
 
-## Pretrained Checkpoint
+## ② Pretrained Checkpoint
 
 Download the checkpoint from [GitHub Releases](https://github.com/Hammond65/DTLS-Face-Inpaint/releases/latest/download/celeba-256.pt). If the release download is unavailable, use the [OneDrive backup](https://connectpolyu-my.sharepoint.com/:u:/g/personal/24144327r_connect_polyu_hk/IQD7__xQlZzPT6Cd1ECBKlleAWZ-lNAFJrRZbD9tLk189GY?e=mfpvw7). Place the downloaded file at `weights/celeba-256.pt`.
 
-## Interactive Demo
+## ③ Interactive Demo (Self Host)
 
 ```bash
 python app.py
@@ -54,7 +59,7 @@ python app.py
 
 Open the local URL printed by Gradio. The hosted demo is also available at [inpaint.hamlee.top](https://inpaint.hamlee.top).
 
-## Inference
+## ④ Inference
 
 Before running inference, update the `trainer` paths in `config/trainer/eval_256_celeba.yaml`:
 
@@ -69,7 +74,7 @@ Then run:
 python main.py -c ./config/trainer/eval_256_celeba.yaml
 ```
 
-## Training
+## ⑤ Training
 
 Update `trainer.data_path`, `trainer.input_image`, and `trainer.results_folder` in `config/trainer/train_256.yaml`. The `input_image` directory should contain paired evaluation images and masks, using the filename prefixes described above. Then start training:
 
