@@ -9,7 +9,7 @@
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
 
-[![Live Demo button](assets/live-demo-button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/local-install-button.svg)](#-installation)<br>
+[![Live Demo button](assets/demo_button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/installation_button.svg)](#installation)<br>
 </div>
 
 <p align="center">
@@ -21,7 +21,7 @@
 
 DTLS-Face-Inpaint is a face image inpainting framework that uses **Domain Transfer in Latent Space (DTLS)** to restore masked regions. Click **Live Demo** above to try it immediately with defined mask or viewer defined mask, or **Installation** to set up inference or training on your machine.
 
-## ① Installation
+<h2 id="installation"><img src="assets/section_1.svg" alt="" width="24" height="24" align="absmiddle"> Installation</h2>
 
 ### 1.1. Clone the repository
 
@@ -46,11 +46,11 @@ pip install -r requirements.txt
 
 > The PyTorch command installs CUDA 12.6 wheels. For CPU or a different CUDA version, install the PyTorch build that matches your system.
 
-## ② Pretrained Checkpoint
+<h2 id="pretrained-checkpoint"><img src="assets/section_2.svg" alt="" width="24" height="24" align="absmiddle"> Pretrained Checkpoint</h2>
 
 Download the checkpoint from [GitHub Releases](https://github.com/Hammond65/DTLS-Face-Inpaint/releases/latest/download/celeba-256.pt). If the release download is unavailable, use the [OneDrive backup](https://connectpolyu-my.sharepoint.com/:u:/g/personal/24144327r_connect_polyu_hk/IQD7__xQlZzPT6Cd1ECBKlleAWZ-lNAFJrRZbD9tLk189GY?e=mfpvw7). Place the downloaded file at `weights/celeba-256.pt`.
 
-## ③ Interactive Demo (Self Host)
+<h2 id="interactive-demo"><img src="assets/section_3.svg" alt="" width="24" height="24" align="absmiddle"> Interactive Demo (Self Host)</h2>
 
 ```bash
 python app.py
@@ -58,7 +58,7 @@ python app.py
 
 Open the local URL printed by Gradio. The hosted demo is also available at [inpaint.hamlee.top](https://inpaint.hamlee.top).
 
-## ④ Inference
+<h2 id="inference"><img src="assets/section_4.svg" alt="" width="24" height="24" align="absmiddle"> Inference</h2>
 
 Before running inference, update the `trainer` paths in `config/trainer/eval_256_celeba.yaml`:
 
@@ -73,7 +73,7 @@ Then run:
 python main.py -c ./config/trainer/eval_256_celeba.yaml
 ```
 
-## ⑤ Training
+<h2 id="training"><img src="assets/section_5.svg" alt="" width="24" height="24" align="absmiddle"> Training</h2>
 
 Update `trainer.data_path`, `trainer.input_image`, and `trainer.results_folder` in `config/trainer/train_256.yaml`. The `input_image` directory should contain paired evaluation images and masks, using the filename prefixes described above. Then start training:
 
