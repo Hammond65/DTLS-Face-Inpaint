@@ -9,7 +9,7 @@
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
 
-[![Live Demo button](assets/live-demo-button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/local-install-button.svg)](#installation)<br>
+[![Live Demo button](assets/live-demo-button.svg)](https://inpaint.hamlee.top) &nbsp; [![Installation button](assets/local-install-button.svg)](#-installation)<br>
 </div>
 
 <p align="center">
@@ -21,7 +21,6 @@
 
 DTLS-Face-Inpaint is a face image inpainting framework that uses **Domain Transfer in Latent Space (DTLS)** to restore masked regions. Click **Live Demo** above to try it immediately with defined mask or viewer defined mask, or **Installation** to set up inference or training on your machine.
 
-<a id="installation" name="installation"></a>
 ## ① Installation
 
 ### 1.1. Clone the repository
